@@ -21,13 +21,11 @@ public class MainController {
 
     @Autowired
     private UserService userService;
-
-    @Autowired
-    private Response response;
     
     @PostMapping("/insertUser")
     public ResponseEntity<?> saveUserHandler(@RequestBody User user) {
         User savedUser = this.userService.saveUser(user);
+        Response response = new Response();
         response.setMessage("User saved with "+savedUser.getId()+" id.");
         return ResponseEntity.ok().body(response);
     }
@@ -45,6 +43,7 @@ public class MainController {
     @DeleteMapping("/deleteUser/{id}")
     public ResponseEntity<?> deleteUserHandler(@PathVariable int id) {
         this.userService.deleteUserById(id);
+        Response response = new Response();
         response.setMessage("The User with id "+id+" is deleted.");
         return ResponseEntity.ok().body(response);
     }

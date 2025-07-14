@@ -1,6 +1,4 @@
 package com.practicespringboot.usermanagement.services;
-import com.practicespringboot.usermanagement.exceptions.GlobalExceptionHandler;
-import com.practicespringboot.usermanagement.exceptions.NullOrEmptyException;
 import com.practicespringboot.usermanagement.exceptions.ResourceNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
